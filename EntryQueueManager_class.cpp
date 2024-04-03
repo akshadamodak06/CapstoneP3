@@ -82,7 +82,7 @@ void shift()
            int a = -1;
            for (int j = 0; j < gates; j++)
            {
-                   if (min > arr_of_size[j])
+                   if (min >= arr_of_size[j])
                    {
                        a = j;
                        min = arr_of_size[j];
