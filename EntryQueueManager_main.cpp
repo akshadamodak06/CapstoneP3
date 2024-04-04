@@ -1,3 +1,4 @@
+#include "EntryQueueManager_class.cpp"
 int main()
 {
    int capacity, gates,poptime;
