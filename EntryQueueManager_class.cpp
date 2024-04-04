@@ -46,12 +46,8 @@ public:
        }
    }
 
-
-   void InsertNew()
+void InsertNew(int people)
    {
-       cout << "Enter the no. of people entering: ";
-       int people;
-       cin >> people;
        int index_of_min = 0, i, min = arr_of_size[0];
        // min is the no. of people in queue containing the least amount of people
        // index_of_min is the queue no. of said queue
@@ -68,13 +64,9 @@ public:
            }
            arr_of_size[index_of_min]++;
            people--;
-
-
-       }
+         }
    }
-
-
-void shift()
+  void shift()
    {
        for (int i = 0; i < gates; i++)
        {
@@ -101,5 +93,15 @@ void shift()
        {
            (arr_of_size[i])--;
        }
+   }
+
+   int people_in_queue()
+   {
+       int sum=0;
+       for(int counter=0;counter<gates;counter++)
+       {
+           sum += arr_of_size[counter];
+       }
+       return sum;
    }
 };
