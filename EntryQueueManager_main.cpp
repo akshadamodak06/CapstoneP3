@@ -15,7 +15,33 @@ int main()
    int remaining=capacity/2;
    int timef;
    int a=0;
+   while(remaining != 0 && a != max_time)
+   {
+       int num;
+       cout<<"Enter 0 to note the people entering else enter any other number : ";      // change
+       cin>>num;
+       switch(num)
+       {
+           case 0:
+           {
+               int people;
+               cout<<"Enter the number of people entering : ";
+               cin>>people;
+               e.InsertNew(people);
+               remaining-=people;
+           }
+           default:
+           {
+               e.shift();
+               e.pop();
+               a++;
+               e.display();
+           }
+       }
+   }
 
+
+   
    timef=a*poptime;
    cout<<"No new Entry allowed now : "<<endl;
    a=0;
