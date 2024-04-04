@@ -16,15 +16,26 @@ int main()
    int timef;
    int a=0;
 
-   cout<<"-----------------------------------"<<endl;
-   cout<<"The members in each queue after shift are "<<endl;
-   e.display();
-   cout<<"---------------------------------";
-   cout<<"The members in each queue after popping"<<endl;
-   e.pop();
-   e.display();
-   cout<<"------------------------"<<endl;
-   e.InsertNew();
-   e.display();
+   timef=a*poptime;
+   cout<<"No new Entry allowed now : "<<endl;
+   a=0;
+   remaining=e.people_in_queue();
+   cout<<remaining;
+   if(remaining !=0)
+   {
+       
+       while(remaining != 0)
+       {
+           e.shift();
+           e.pop();
+           a++;
+           remaining= e.people_in_queue();
+           e.display();
+       }
+     
+   }
+   timef+=a*poptime;
+   cout<<"Total time required for the people to enter is : "<<timef<<endl;
+   return 0 ;
 }
 
