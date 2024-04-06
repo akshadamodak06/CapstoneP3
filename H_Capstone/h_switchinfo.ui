@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1106</width>
+    <width>1229</width>
     <height>629</height>
    </rect>
   </property>
@@ -16,15 +16,15 @@
   <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
     <rect>
-     <x>260</x>
-     <y>110</y>
-     <width>621</width>
-     <height>371</height>
+     <x>10</x>
+     <y>10</y>
+     <width>1211</width>
+     <height>611</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>14</pointsize>
+     <pointsize>20</pointsize>
     </font>
    </property>
    <property name="title">
@@ -36,10 +36,10 @@
    <widget class="QWidget" name="">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>120</y>
-      <width>531</width>
-      <height>81</height>
+      <x>130</x>
+      <y>140</y>
+      <width>931</width>
+      <height>311</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
@@ -70,7 +70,7 @@
         <widget class="QRadioButton" name="Yes">
          <property name="font">
           <font>
-           <pointsize>12</pointsize>
+           <pointsize>18</pointsize>
           </font>
          </property>
          <property name="text">
@@ -82,7 +82,7 @@
         <widget class="QRadioButton" name="No">
          <property name="font">
           <font>
-           <pointsize>12</pointsize>
+           <pointsize>18</pointsize>
           </font>
          </property>
          <property name="text">

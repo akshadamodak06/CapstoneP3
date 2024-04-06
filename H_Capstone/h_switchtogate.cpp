@@ -12,3 +12,9 @@ H_SwitchToGate::~H_SwitchToGate()
 {
     delete ui;
 }
+
+void H_SwitchToGate::on_pushButton_clicked()
+{
+    hide() ;
+}
+

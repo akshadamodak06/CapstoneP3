@@ -15,6 +15,9 @@ public:
     explicit H_SwitchToGate(QWidget *parent = nullptr);
     ~H_SwitchToGate();
 
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::H_SwitchToGate *ui;
 };
