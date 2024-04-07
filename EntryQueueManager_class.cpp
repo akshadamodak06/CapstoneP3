@@ -163,3 +163,228 @@ public:
         // cout << "It will take " << poptime * (arr_of_vip[index_of_min] ) /60<< " mins from your current position to reach stadium ." << endl;
         return index_of_min + 1;
     }
+
+    int people_in_queue()
+    {
+        int sum = 0;
+        for (int counter = 0; counter < Gates; counter++)
+        {
+            sum += arr_of_gates[counter];
+        }
+        return sum;
+    }
+    int people_in_vipQueue()
+    {
+        int sum = 0;
+        for (int counter = 0; counter < VipGates; counter++)
+        {
+            sum += arr_of_vip[counter];
+        }
+        return sum;
+    }
+
+    void shiftVip1(int queue_person, int standing, int poptime, int groupVip_t)
+    {
+        int size = arr_of_vip[queue_person];
+        if (size > standing)
+        {
+            if (groupVip_t != 0)
+            {
+                cout << "Your last group member is not the last member in the queue . You cannot Shift ." << endl;
+                cout << "It will take " << poptime * standing << " sec from your current position for all members of group to reach stadium ." << endl;
+            }
+            else
+            {
+                cout << "You are not the last member in the queue . You cannot Shift ." << endl;
+                cout << "It will take " << poptime * standing << " secs from your current position to reach stadium ." << endl;
+            }
+        }
+        else if (size == standing)
+        {
+            int min = arr_of_vip[0];
+            int a = -1;
+            for (int j = 0; j < VipGates; j++)
+            {
+                if (min >= arr_of_vip[j])
+                {
+                    a = j;
+                    min = arr_of_vip[j];
+                }
+            }
+            if (a != -1 && (min + groupVip_t) < arr_of_vip[queue_person])
+            {
+                cout << "It will take " << poptime * standing << " sec from your current position to reach stadium ." << endl;
+                cout << "You have to move to queue " << a + 1 << endl;
+                if (groupVip_t != 0)
+                {
+                    (arr_of_vip[a]) += groupVip_t;
+                    (arr_of_vip[queue_person]) -= groupVip_t;
+                }
+                else
+                {
+                    (arr_of_vip[a])++;
+                    (arr_of_vip[queue_person])--;
+                }
+                cout << "It will take " << poptime * (arr_of_vip[a]) << " sec from your new position to reach stadium ." << endl;
+            }
+            else
+            {
+                if (groupVip_t != 0)
+
+                {
+                    cout << "You and your group members are at the most optimised place ." << endl;
+                    cout << "It will take " << poptime * standing << " sec from your current position to reach stadium ." << endl;
+                }
+                else
+                {
+                    cout << "You are at the most optimised place ." << endl;
+                    cout << "It will take " << poptime * standing << " sec from your current position to reach stadium ." << endl;
+                }
+            }
+        }
+
+        else
+        {
+            cout << "Enter your accurate standing in your queue" << endl;
+        }
+    }
+    void shift1(int queue_person, int standing, int poptime, int group_t)
+    {
+        int size = arr_of_gates[queue_person];
+        if (size > standing)
+        {
+            if (group_t != 0)
+            {
+                cout << "Your last group member is not the last member in the queue . You cannot Shift ." << endl;
+                cout << "It will take " << poptime * standing << " sec from your current position for all members of group to reach stadium ." << endl;
+            }
+            else
+            {
+                cout << "You are not the last member in the queue . You cannot Shift ." << endl;
+                cout << "It will take " << poptime * standing << " sec from your current position to reach stadium ." << endl;
+            }
+        }
+        else if (size == standing)
+        {
+            int min = arr_of_gates[0]; // change
+            int a = -1;
+            for (int j = 0; j < Gates; j++)
+            {
+                if (min >= arr_of_gates[j])
+                {
+                    a = j;
+                    min = arr_of_gates[j];
+                }
+            }
+            if (a != -1 && (min + group_t) < arr_of_gates[queue_person])
+            {
+                cout << "It will take " << poptime * standing << " sec from your current position to reach stadium ." << endl;
+                cout << "You have to move to queue " << a + 1 << endl;
+                if (group_t != 0)
+                {
+                    (arr_of_gates[a]) += group_t;
+                    (arr_of_gates[queue_person]) -= group_t;
+                }
+                else
+                {
+                    (arr_of_gates[a])++;
+                    (arr_of_gates[queue_person])--;
+                }
+                cout << "It will take " << poptime * (arr_of_gates[a]) << " sec from your new position to reach stadium ." << endl;
+            }
+            else
+            {
+                if (group_t != 0)
+                {
+                    cout << "You and your group members are at the most optimised place ." << endl;
+                    cout << "It will take " << poptime * standing << " sec from your current position to reach stadium ." << endl;
+                }
+                else
+                {
+                    cout << "You are at the most optimised place ." << endl;
+                    cout << "It will take " << poptime * standing << " sec from your current position to reach stadium ." << endl;
+                }
+            }
+        }
+
+        else
+        {
+            cout << "Enter your accurate standing in your queue" << endl;
+        }
+    }
+
+    void shift()
+    {
+        for (int i = 0; i < Gates; i++)
+        {
+            int min = arr_of_gates[0];
+            int a = -1;
+            for (int j = 0; j < Gates; j++)
+            {
+                if (min >= arr_of_gates[j])
+                {
+                    a = j;
+                    min = arr_of_gates[j];
+                }
+            }
+            if (a != -1 && min < arr_of_gates[i])
+            {
+                (arr_of_gates[a])++;
+                (arr_of_gates[i])--;
+            }
+        }
+    }
+
+    void shiftV()
+    {
+        for (int i = 0; i < VipGates; i++)
+        {
+            int min = arr_of_vip[0];
+            int a = -1;
+            for (int j = 0; j < VipGates; j++)
+            {
+                if (min >= arr_of_vip[j])
+                {
+                    a = j;
+                    min = arr_of_vip[j];
+                }
+            }
+            if (a != -1 && min < arr_of_vip[i])
+            {
+                (arr_of_vip[a])++;
+                (arr_of_vip[i])--;
+            }
+        }
+    }
+    void pop()
+    {
+        for (int counter = 0; counter < Gates; counter++)
+        {
+            if (arr_of_gates[counter] != 0)
+            {
+                (arr_of_gates[counter])--;
+            }
+        }
+    }
+    void popV()
+    {
+        for (int counter = 0; counter < VipGates; counter++)
+        {
+            if (arr_of_vip[counter] != 0)
+            {
+                (arr_of_vip[counter])--;
+            }
+        }
+    }
+
+    int waitingtime(int moving_queue)
+    {
+        return (arr_of_gates[moving_queue] * poptime);
+    }
+
+    int waitingtimeVip(int moving_queue)
+    {
+        return (arr_of_vip[moving_queue] * poptime);
+    }
+};
+
