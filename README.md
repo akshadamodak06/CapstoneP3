@@ -9,3 +9,5 @@ Akshada: Worked on making the class EntryQueueManager and writing int main() for
 Maanav: Worked on making the class EntryQueueManager and writing int main() for console   </br>
 Harita: Worked on GUI - made windows and dialog boxes, random allocation, initialization of stadium data and wrote the readme file </br>
 Jevik: Worked on GUI - Linked backend and frontend (GUI), worked on user interface </br>
+
+P3_GUI is the final version of GUI, H_Capstone being Harita's contribution and Capstone_P3_GUI being Jevik's contribution
